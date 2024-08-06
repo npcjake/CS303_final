@@ -55,13 +55,25 @@ public class UserInterface {
 	 * Caeser cipher
 	 */
 	public void Caeser() {
-
+	        text = getusertext();
+	        key = getuserint();
+	        Caesar caesar = new Caesar();
+	        String encryptedText = caesar.caesarEncrypt(text, key);
+	        String decryptedText = caesar.caesarDecrypt(encryptedText, key);
+	        System.out.println("Caesar Encrypted Text: " + encryptedText);
+	        System.out.println("Caesar Decrypted Text: " + decryptedText);
 	}
 	/**
 	 * Autokey cipher
 	 */
 	public void AutoKey() {
-
+		text = getusertext();
+	        String key = getuserkey();
+	        Autokey autokey = new Autokey();
+	        String encryptedText = autokey.autokeyEncrypt(text, key);
+	        String decryptedText = autokey.autokeyDecrypt(encryptedText, key);
+	        System.out.println("Autokey Encrypted Text: " + encryptedText);
+	        System.out.println("Autokey Decrypted Text: " + decryptedText);
 	}
 	/**
 	 * Rail fence cipher
@@ -109,6 +121,11 @@ public class UserInterface {
 		System.out.println("Input key");
 		key = scan.nextInt();
 		return key;
+	}
+
+	public static String getuserkey(){
+		System.out.println("Input key:");
+	        return scan.nextLine();
 	}
 
 }
