@@ -22,7 +22,17 @@ public class RailFence {
 	/**
 	 * method to encrypt using rail fence
 	 */
-	public String encrypt() {
+	public void encryptanddecrypt() {
+		String encryptedMessage = encrypt(this.text);
+		System.out.println("Encrypted: " + encryptedMessage);
+		String decryptedMessage = decrypt(encryptedMessage);
+		System.out.println("Decrypted: " + decryptedMessage);
+
+	}
+	/**
+	 * method to encrypt using rail fence
+	 */
+	public String encrypt(String text) {
 		char[][] railfence = new char[key][text.length()];
 
 		for (int i = 0; i < this.key; i++) {
@@ -55,7 +65,7 @@ public class RailFence {
 	/**
 	 * method to decrypt using rail fence
 	 */
-	public String decrypt() {
+	public String decrypt(String text) {
 		char[][] railfence = new char[key][text.length()];
 
 		for(int i = 0; i < key; i++) {
