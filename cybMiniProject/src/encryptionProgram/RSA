@@ -19,7 +19,7 @@ public class RSA {
 		this.message = message;
 	}
 
-	public void encryptRSA(){
+	public void encryptanddecrypt(){
 		primeFiller();
 		setKeys();
 		List<Integer> coded = encoder(message);
