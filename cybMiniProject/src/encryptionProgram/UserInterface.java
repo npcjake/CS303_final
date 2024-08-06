@@ -70,10 +70,7 @@ public class UserInterface {
 		text = getusertext();
 		key = getuserint();
 		RailFence railfence = new RailFence(text, key);
-		encryptedtext = railfence.encrypt();
-		RailFence railfence2 = new RailFence(encryptedtext, key);
-		decryptedtext = railfence2.decrypt();
-		System.out.println(encryptedtext + '\n' + decryptedtext);
+		railfence.encryptanddecrypt();
 
 	}
 	/**
@@ -92,7 +89,9 @@ public class UserInterface {
 	 * RSA cipher
 	 */
 	public  void RSA() {
-
+		text = getusertext();
+		RSA rsa = new RSA(text);
+		rsa.encryptanddecrypt();
 	}
 	/**
 	 * Method to get a users text input
