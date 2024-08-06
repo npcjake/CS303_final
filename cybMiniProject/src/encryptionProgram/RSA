@@ -13,9 +13,9 @@ public class RSA {
 	private static String message;
 
 	public RSA(String message) {
-    if(message == null){
-      throw new IllegalArgumentException("Cannot be null");
-      }
+		if(message == null) {
+			throw new IllegalArgumentException("Message cannot be null");
+		}
 		this.message = message;
 	}
 
