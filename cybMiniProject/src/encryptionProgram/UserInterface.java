@@ -89,7 +89,9 @@ public class UserInterface {
 	 * AES cipher
 	 */
 	public void AES() {
-
+		text = getusertext();
+		AES aes = new AES(text);
+		aes.encryptanddecrypt();
 	}
 	/**
 	 * DES cipher
