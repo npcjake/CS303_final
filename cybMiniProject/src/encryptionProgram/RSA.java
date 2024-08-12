@@ -7,7 +7,7 @@ import java.security.PublicKey;
 import java.util.Base64;
 import java.util.Scanner;
 
-public class RSAEncryption {
+public class RSA {
     private PublicKey publicKey;
     private PrivateKey privateKey;
 
