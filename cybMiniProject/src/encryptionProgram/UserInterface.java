@@ -103,9 +103,8 @@ public class UserInterface {
 	 * RSA cipher
 	 */
 	public  void RSA() {
-		text = getusertext();
-		RSA rsa = new RSA(text);
-		rsa.encryptanddecrypt();
+		RSA rsa = new RSA();
+		rsa.performEncryptionDecryption();
 	}
 	/**
 	 * Method to get a users text input
