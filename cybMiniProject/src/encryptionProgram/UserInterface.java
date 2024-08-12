@@ -97,7 +97,8 @@ public class UserInterface {
 	 * DES cipher
 	 */
 	public  void DES() {
-
+		DES desCipher = new DES();
+		desCipher.performEncryptionDecryption();
 	}
 	/**
 	 * RSA cipher
