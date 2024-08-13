@@ -20,7 +20,7 @@ public class RailFence {
 		this.key = key;
 	}
 	/**
-	 * method to encrypt using rail fence
+	 * method to encrypt and decrypt using rail fence
 	 */
 	public void encryptanddecrypt() {
 		String encryptedMessage = encrypt(this.text);
