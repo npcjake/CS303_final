@@ -10,8 +10,13 @@ import javax.crypto.spec.SecretKeySpec;
 public class AES {
 	String text;
 	private SecretKey secretKey;
+	/**
+	 * AES constructor
+	 * @param text - the users text
+	 * @throws IllegalArgumentException if text is null or blank
+	 */
 	public AES(String text) {
-		if(text == null) {
+		if(text == null || text.isBlank()) {
 			throw new IllegalArgumentException("Text cannot be null");
 		}
 		this.text = text;
