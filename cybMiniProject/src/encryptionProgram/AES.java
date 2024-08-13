@@ -12,8 +12,8 @@ public class AES {
 	private SecretKey secretKey;
 	/**
 	 * AES constructor
-	 * @param text - the users text
-	 * @throws IllegalArgumentException if text is null or blank
+	 * @param String text - the users text input
+	 * @throws IllegalArgumentException - if text is null or blank
 	 */
 	public AES(String text) {
 		if(text == null || text.isBlank()) {
@@ -65,8 +65,8 @@ public class AES {
 	}
 	/**
 	 * Encrypts using AES algorithm 
-	 * @param text - the text to be encrypted
-	 * @return - encrypted string
+	 * @param String text - the text to be encrypted
+	 * @return String - encrypted string
 	 * @throws Exception
 	 */
 	public String encrypt(String text)throws Exception{
@@ -77,8 +77,8 @@ public class AES {
 	}
 	/**
 	 * Decrypts using AES algorithm
-	 * @param text - the text to be decrypted
-	 * @return - decrypted string
+	 * @param String text - the text to be decrypted
+	 * @return String - decrypted string
 	 * @throws Exception
 	 */
 	public String decrypt(String text) throws Exception {
