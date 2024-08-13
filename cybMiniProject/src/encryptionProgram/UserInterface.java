@@ -9,11 +9,13 @@ public class UserInterface {
 	private static int userinput;
 	private static String encryptedtext;
 	private static String decryptedtext;
-
-	public UserInterface() {
-
-	}
 	
+	/**
+	 * User interface constructor
+	 */
+	public UserInterface() {
+		
+	}
 	/**
 	 * Method to get user information and choose the appropriate cipher encryption method
 	 */
