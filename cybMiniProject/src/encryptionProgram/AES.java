@@ -1,12 +1,10 @@
 package encryptionProgram;
 
-import java.security.SecureRandom;
 import java.util.Base64;
 import java.util.Scanner;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
-import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 public class AES {
@@ -18,6 +16,9 @@ public class AES {
 		}
 		this.text = text;
 	}
+	/**
+	 * Method to encrypt and decrypt
+	 */
 	public void encryptanddecrypt()   {
 		try {
 			Scanner scanner = new Scanner(System.in);
@@ -48,18 +49,33 @@ public class AES {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * Generates a random key
+	 * @throws Exception
+	 */
 	public void generateKey() throws Exception {
 		KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
 		keyGenerator.init(128);
 		this.secretKey = keyGenerator.generateKey();
 	}
-
+	/**
+	 * Encrypts using AES algorithm 
+	 * @param text - the text to be encrypted
+	 * @return - encrypted string
+	 * @throws Exception
+	 */
 	public String encrypt(String text)throws Exception{
 		Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
 		cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 		byte[] encryptedBytes = cipher.doFinal(text.getBytes());
 		return Base64.getEncoder().encodeToString(encryptedBytes);
 	}
+	/**
+	 * Decrypts using AES algorithm
+	 * @param text - the text to be decrypted
+	 * @return - decrypted string
+	 * @throws Exception
+	 */
 	public String decrypt(String text) throws Exception {
 		Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
 		cipher.init(Cipher.DECRYPT_MODE, secretKey);
